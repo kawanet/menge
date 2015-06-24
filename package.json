@@ -1,0 +1,16 @@
+{
+  "name": "menge",
+  "version": "0.0.1",
+  "description": "set theory for array-like object",
+  "main": "menge.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "author": "kawanet",
+  "license": "MIT",
+  "devDependencies": {
+    "jsdoc": "^3.3.2",
+    "mocha": "^2.2.5",
+    "uglifyjs": "^2.4.10"
+  }
+}
