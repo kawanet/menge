@@ -16,28 +16,37 @@ describe(testjs + " with " + short + " tests", function() {
   var menge = require(mengejs);
 
   it("union(source, target)", function() {
-    var source = [].concat(LIST1);
-    var target = [].concat(LIST2);
+    var source = new ArrayLike(LIST1);
+    var target = new ArrayLike(LIST2);
     var result = menge.union(source, target);
 
     assert.equal(source, result);
-    assert.equal(LIST3.join(","), result.join(","));
+    assert.equal(join(LIST3), join(result));
     assert.equal(6, source.length); // breaking
     assert.equal(3, target.length);
     assert.equal(6, result.length);
   });
 
   it("union(source, target, dest)", function() {
-    var source = [].concat(LIST2);
-    var target = [].concat(LIST1);
-    var dest = [].concat(LIST4);
+    var source = new ArrayLike(LIST2);
+    var target = new ArrayLike(LIST1);
+    var dest = new ArrayLike(LIST4);
     var result = menge.union(source, target, dest);
 
     assert.equal(dest, result);
-    assert.equal(LIST5.join(","), result.join(","));
+    assert.equal(join(LIST5), join(result));
     assert.equal(3, source.length); // not breaking
     assert.equal(3, target.length);
     assert.equal(7, result.length);
     assert.equal(7, dest.length);
   });
 });
+
+function ArrayLike(array) {
+  if (!(this instanceof ArrayLike)) return new ArrayLike(array);
+  Array.prototype.push.apply(this, array);
+}
+
+function join(array) {
+  return Array.prototype.join.call(array, ",");
+}

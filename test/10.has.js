@@ -19,7 +19,7 @@ describe(testjs + " with " + short + " tests", function() {
   var menge = require(mengejs);
 
   it("has(array, string)", function() {
-    var has = menge.has.bind(null, LIST1);
+    var has = menge.has.bind(null, new ArrayLike(LIST1));
     assert.ok(has("hoge"));
     assert.ok(!has("foo"));
     assert.ok(!has(OBJECT));
@@ -30,7 +30,7 @@ describe(testjs + " with " + short + " tests", function() {
   });
 
   it("has(array, object)", function() {
-    var has = menge.has.bind(null, LIST2);
+    var has = menge.has.bind(null, new ArrayLike(LIST2));
     assert.ok(!has("hoge"));
     assert.ok(!has("foo"));
     assert.ok(has(OBJECT));
@@ -40,3 +40,8 @@ describe(testjs + " with " + short + " tests", function() {
     assert.ok(has(UNDEFINED));
   });
 });
+
+function ArrayLike(array) {
+  if (!(this instanceof ArrayLike)) return new ArrayLike(array);
+  Array.prototype.push.apply(this, array);
+}

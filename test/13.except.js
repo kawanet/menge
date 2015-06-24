@@ -14,13 +14,13 @@ describe(testjs + " with " + short + " tests", function() {
   var menge = require(mengejs);
 
   it("except(source, target, dest)", function() {
-    var source = [].concat(LIST1);
-    var target = [].concat(LIST2);
+    var source = new ArrayLike(LIST1);
+    var target = new ArrayLike(LIST2);
     var dest = [];
     var result = menge.except(source, target, dest);
 
     assert.equal(dest, result);
-    assert.equal(LIST3.join(","), result.join(","));
+    assert.equal(join(LIST3), join(result));
     assert.equal(4, source.length); // not breaking
     assert.equal(3, target.length);
     assert.equal(2, result.length);
@@ -28,14 +28,23 @@ describe(testjs + " with " + short + " tests", function() {
   });
 
   it("except(source, target)", function() {
-    var source = [].concat(LIST1);
-    var target = [].concat(LIST2);
+    var source = new ArrayLike(LIST1);
+    var target = new ArrayLike(LIST2);
     var result = menge.except(source, target);
 
     assert.equal(source, result);
-    assert.equal(LIST3.join(","), result.join(","));
+    assert.equal(join(LIST3), join(result));
     assert.equal(2, source.length); // breaking
     assert.equal(3, target.length);
     assert.equal(2, result.length);
   });
 });
+
+function ArrayLike(array) {
+  if (!(this instanceof ArrayLike)) return new ArrayLike(array);
+  Array.prototype.push.apply(this, array);
+}
+
+function join(array) {
+  return Array.prototype.join.call(array, ",");
+}
