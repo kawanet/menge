@@ -1,12 +1,14 @@
 /**
  * menge.js - set theory for array-like object
  *
+ * @module menge
  * @copyright Yusuke Kawasaki
  * @license MIT
- * @see https://gist.github.com/kawanet/f94e51057c28b6eeff3b
+ * @see https://github.com/kawanet/menge
  */
 
 (function(module, window) {
+
   var menge = {
     has: has,
     hasno: hasno,
@@ -15,6 +17,17 @@
   };
 
   var array = [];
+
+  /**
+   * except
+   *
+   * @function
+   * @name except
+   * @param source {Array-like}
+   * @param target {Array-like}
+   * @param [dest] {Array-like}
+   * @returns {Array-like}
+   */
 
   function except(source, target, dest) {
     var targetHas = has.bind(null, target);
@@ -32,6 +45,16 @@
     }
   }
 
+  /**
+   * union
+   *
+   * @function union
+   * @param source {Array-like}
+   * @param target {Array-like}
+   * @param [dest] {Array-like}
+   * @returns {Array-like}
+   */
+
   function union(source, target, dest) {
     var sourceHas = hasno.bind(null, source);
     if (dest) {
@@ -44,16 +67,34 @@
     return dest;
   }
 
-  function has(list, value) {
-    return array.some.call(list, eq);
+  /**
+   * has
+   *
+   * @function has
+   * @param source {Array-like}
+   * @param value {*}
+   * @returns {boolean}
+   */
+
+  function has(source, value) {
+    return array.some.call(source, eq);
 
     function eq(test) {
       return test === value;
     }
   }
 
-  function hasno(list, value) {
-    return array.every.call(list, ne);
+  /**
+   * hasno
+   *
+   * @function hasno
+   * @param source {Array-like}
+   * @param value {*}
+   * @returns {boolean}
+   */
+
+  function hasno(source, value) {
+    return array.every.call(source, ne);
 
     function ne(test) {
       return test !== value;
@@ -61,6 +102,6 @@
   }
 
   if (module) module.exports = menge;
-  if (window) window.menge = menge;
-  
+  if (!module && window) window.menge = menge;
+
 })(("undefined" !== typeof module && module), ("undefined" !== typeof window && window));
