@@ -1,5 +1,5 @@
 /**
- * menge.js - set theory for array-like object
+ * menge.js - Minimalist set theory operations for Array-like objects in less than 1KB
  *
  * @module menge
  * @copyright Yusuke Kawasaki
@@ -93,8 +93,8 @@
   function union(source, target, dest) {
     var sourceHas = hasno.bind(null, source);
     if (dest) {
-      array.push.apply(dest, array.filter.call(target, sourceHas));
       array.push.apply(dest, source);
+      array.push.apply(dest, array.filter.call(target, sourceHas));
     } else {
       dest = source;
       array.push.apply(dest, array.filter.call(target, sourceHas));

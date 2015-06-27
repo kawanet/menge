@@ -1,16 +1,29 @@
 {
   "name": "menge",
   "version": "0.0.1",
-  "description": "set theory for array-like object",
+  "description": "Minimalist set theory operations for Array-like objects in less than 1KB",
   "main": "menge.js",
   "scripts": {
+    "build": "make",
     "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kawanet/promisen.git"
   },
   "author": "kawanet",
   "license": "MIT",
   "devDependencies": {
     "jsdoc": "^3.3.2",
+    "jshint": "^2.8.0",
     "mocha": "^2.2.5",
     "uglifyjs": "^2.4.10"
-  }
+  },
+  "keywords": [
+    "array-like",
+    "set",
+    "union",
+    "except",
+    "unique"
+  ]
 }

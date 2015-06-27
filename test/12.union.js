@@ -4,9 +4,9 @@ var assert = require("assert");
 
 var LIST1 = ["hoge", "pomu", "fuga"];
 var LIST2 = ["foo", "bar", "baz"];
-var LIST3 = [].concat(LIST1, LIST2);
+var LIST3 = [].concat(LIST1).concat(LIST2);
 var LIST4 = ["qux"];
-var LIST5 = [].concat("qux", LIST3);
+var LIST5 = [].concat("qux").concat(LIST2).concat(LIST1);
 
 var testjs = __filename.replace(/^.*\//, "");
 var mengejs = process.env.MENGEJS || "../menge.js";
