@@ -2,35 +2,39 @@
 
 Minimalist set theory operations for Array-like objects in less than 1KB
 
-## USAGE
+### Usage
 
 ```js
 var menge = require("menge");
+
 var source = [1, 2, 3];
 var target = [4, 5, 6];
 var dest = [];
+
 menge.union(source, target, dest); // => [1, 2, 3, 4, 5, 6]
 ```
 
-## FOR NODE.JS
+### Node.js
 
 ```sh
 npm install menge
 ```
 
-## FOR BROWSER
+### Browser
 
 ```html
 <script src="https://raw.githubusercontent.com/kawanet/menge/master/dist/menge.min.js"></script>
 ```
 
-## REPOSITORY
+### Repository
 
-https://github.com/kawanet/menge
+- https://github.com/kawanet/menge
 
-## LICENSE
+### Documentation
 
-The MIT License (MIT)
+- http://kawanet.github.io/menge/module-menge.html
+
+### MIT License
 
 Copyright (c) 2015 Yusuke Kawasaki
 

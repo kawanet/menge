@@ -5,6 +5,7 @@
  * @copyright Yusuke Kawasaki
  * @license MIT
  * @see https://github.com/kawanet/menge
+ * @see http://kawanet.github.io/menge/module-menge.html
  */
 
 (function(module, window) {
@@ -22,9 +23,10 @@
   /**
    * unique
    *
-   * @param source {Array-like}
-   * @param [dest] {Array-like}
-   * @returns {Array-like}
+   * @function unique
+   * @param source {Array|Array-like}
+   * @param [dest] {Array|Array-like} default: source
+   * @returns {Array|Array-like} Array or Array-like object
    */
 
   function unique(source, dest) {
@@ -54,14 +56,13 @@
   }
 
   /**
-   * except
+   * source - target
    *
-   * @function
-   * @name except
-   * @param source {Array-like}
-   * @param target {Array-like}
-   * @param [dest] {Array-like}
-   * @returns {Array-like}
+   * @function except
+   * @param source {Array|Array-like}
+   * @param target {Array|Array-like}
+   * @param [dest] {Array|Array-like} default: source
+   * @returns {Array|Array-like} Array or Array-like object
    */
 
   function except(source, target, dest) {
@@ -81,13 +82,13 @@
   }
 
   /**
-   * union
+   * source + target
    *
    * @function union
-   * @param source {Array-like}
-   * @param target {Array-like}
-   * @param [dest] {Array-like}
-   * @returns {Array-like}
+   * @param source {Array|Array-like}
+   * @param target {Array|Array-like}
+   * @param [dest] {Array|Array-like} default: source
+   * @returns {Array|Array-like} Array or Array-like object
    */
 
   function union(source, target, dest) {
@@ -103,12 +104,12 @@
   }
 
   /**
-   * has
+   * returns true when one or more rows are matched.
    *
    * @function has
-   * @param source {Array-like}
+   * @param source {Array|Array-like}
    * @param value {*}
-   * @returns {boolean}
+   * @returns {boolean} Boolean
    */
 
   function has(source, value) {
@@ -120,12 +121,12 @@
   }
 
   /**
-   * hasno
+   * returns false when no rows are matched.
    *
    * @function hasno
-   * @param source {Array-like}
+   * @param source {Array|Array-like}
    * @param value {*}
-   * @returns {boolean}
+   * @returns {boolean} Boolean
    */
 
   function hasno(source, value) {
