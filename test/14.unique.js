@@ -1,12 +1,6 @@
-#!/usr/bin/env ./node_modules/.bin/mocha -R spec
+#!/usr/bin/env mocha -R spec
 
 var assert = require("assert");
-
-var OBJECT = {"object": 1};
-var ARRAY = ["array"];
-var NUMBER = 0;
-var NULL = null;
-var UNDEFINED = void 0;
 
 var LIST1 = ["hoge", "pomu", "hoge", "hoge", "fuga", "fuga"];
 var LIST2 = ["hoge", "pomu", "fuga"];

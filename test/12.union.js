@@ -1,4 +1,4 @@
-#!/usr/bin/env ./node_modules/.bin/mocha -R spec
+#!/usr/bin/env mocha -R spec
 
 var assert = require("assert");
 

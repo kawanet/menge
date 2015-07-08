@@ -6,7 +6,7 @@ DEST=./dist/menge.min.js
 UGLIFYJS=./node_modules/.bin/uglifyjs
 JSDOC=./node_modules/.bin/jsdoc
 MOCHA=./node_modules/.bin/mocha
-JSHINT=./node_modules/.bin/JSHINT
+JSHINT=./node_modules/.bin/jshint
 
 DOCS_DIR=./gh-pages
 DOC_HTML=./gh-pages/module-menge.html
