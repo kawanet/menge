@@ -25,5 +25,13 @@
     "union",
     "except",
     "unique"
-  ]
+  ],
+  "jshintConfig": {
+    "undef": true,
+    "node": true,
+    "mocha": true,
+    "globals": {
+      "window": true
+    }
+  }
 }
