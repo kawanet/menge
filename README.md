@@ -1,4 +1,4 @@
-# menge.js [![Build Status](https://travis-ci.org/kawanet/menge.svg?branch=master)](https://travis-ci.org/kawanet/menge)
+# menge.js [![npm version](https://badge.fury.io/js/menge.svg)](http://badge.fury.io/js/menge) [![Build Status](https://travis-ci.org/kawanet/menge.svg?branch=master)](https://travis-ci.org/kawanet/menge)
 
 Minimalist set theory operations for Array-like objects in less than 1KB
 
@@ -17,7 +17,7 @@ menge.union(source, target, dest); // => [1, 2, 3, 4, 5, 6]
 ### Node.js
 
 ```sh
-npm install menge
+npm install --save menge
 ```
 
 ### Browser
